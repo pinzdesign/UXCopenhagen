@@ -1,0 +1,102 @@
+---
+//interface Props {
+//	page: string;
+//}
+
+//const { page } = Astro.props;
+---
+
+<header>
+	<div class="banner">
+		<div class="logo">
+			<img src="../img/logo.png">
+		</div>
+		<nav class="navmenu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Tickets</a></li>
+				<li><a href="#">Shop</a></li>
+				<li><a href="#">History</a></li>
+			</ul>
+		</nav>
+		<div class="caption_item">
+			<div class="caption_box">
+				<div class="caption">
+					<h2>Degrowth & Consumerism</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<style>
+.banner {
+	background-image: url("../img/IMG_2977.JPG");
+	background-size: cover;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	height: 100vh;
+}
+
+.logo img {
+	width: 245px;
+}
+
+.banner {
+	padding: 30px;
+}
+
+.navmenu ul {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+	justify-content: right;
+}
+
+a {
+	font-family: "Michroma", sans-serif;
+	letter-spacing: 3px;
+	color: white;
+	border: 2px solid white;
+	text-decoration: none;
+	padding: 15px 45px;
+	transition: all .3s;
+}
+
+a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.caption_box {
+	position: relative;
+	background-color: #f29f23;
+	margin-left: -30px;
+	height: 160px;
+	width: 30%;
+}
+
+.caption_item {
+	grid-column: 1 / span 2;
+}
+
+.caption {
+	background-color: rgb(79, 135, 160);
+	color: white;
+	font-size: 32px;
+	font-family: "Michroma", sans-serif;
+	letter-spacing: 3px;
+	line-height: 50px;
+	text-shadow: 1px 1px white, -1px -1px #666;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	padding: 30px;
+}
+
+.caption h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+</style>

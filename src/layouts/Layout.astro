@@ -1,0 +1,49 @@
+---
+interface Props {
+	title: string;
+	meta_description: string;
+}
+
+const { title, meta_description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={meta_description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<script src="https://kit.fontawesome.com/ed11d827ab.js" crossorigin="anonymous"></script>
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Michroma&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: rgb(156, 207, 213);
+	background-image: url("../img/background.jpg");
+	background-repeat: repeat-y;
+	background-attachment: fixed;
+	background-size: 50%;
+	font-family: "Maven Pro", sans-serif;
+	letter-spacing: 1px;
+	line-height: 30px;
+	color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Michroma", sans-serif;
+}
+</style>

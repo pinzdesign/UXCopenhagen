@@ -1,0 +1,22 @@
+---
+import Statistic from "./Statistic.astro";
+---
+
+<div class="statistics">
+    <Statistic stat_int="9" stat_txt="Years of Experience"/>
+    <Statistic stat_int="20+" stat_txt="Speakers each year"/>
+    <Statistic stat_int="75+" stat_txt="Workshops hosted"/>
+    <Statistic stat_int="2000+" stat_txt="Attendees"/>
+</div>
+
+<style>
+    .statistics {
+        background-color: rgb(79, 135, 160);
+        text-align: center;
+        display: flex;
+        gap: 80px;
+        justify-content: center;
+        padding: 30px;
+        box-shadow: inset 0px 5px 10px black;
+    }
+</style>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ContentGrid2 from '../components/ContentGrid2.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Statistics from '../components/Statistics.astro';
+import Speakers from '../components/Speakers.astro';
+---
+
+<Layout title="Welcome to UX Copenhagen", meta_description="UX Copenhagen frontpage">
+	<Header/>
+	<SectionHeader section_title="What is UX Copenhagen?"/>
+	<ContentGrid2/>
+	<SectionHeader section_title="Sponsors"/>
+	<Sponsors/>
+	<Statistics/>
+	<Speakers/>
+</Layout>
+
+<style>
+
+</style>
