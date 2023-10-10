@@ -1,0 +1,56 @@
+---
+const {data} = Astro.props;
+
+const parseDesc = data.description;
+
+//console.log(data);
+---
+
+<div class="ticket">
+    <h4>{data.title}</h4>
+    <img src="../img/heart.png">
+    {data.id !== 3 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
+    {data.id === 3 &&
+    <div class="description_box">
+        <Fragment set:html={parseDesc} />
+    </div>
+    }
+    {data.id !== 3 && <a href={"ticket.html/id=" + data.id}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
+</div>
+
+<style>
+    h4 {
+        margin: 0;
+        font-family: "Michroma", sans-serif;
+    }
+    .ticket {
+        background-color: white;
+        border: 1px solid #999;
+        padding: 30px;
+    }
+    .ticket img {
+        width: 100%;
+    }
+    a {
+        background-color: #f29f23;
+        color: black;
+        text-decoration: none;
+        padding: 10px 30px;
+        display: block;
+        margin-top: 30px;
+        font-size: 20px;
+        float: right;
+        transition: all .3s;
+        display: block;
+        width: calc(100% - 60px);
+        text-align: center;
+    }
+    a:hover {
+        color: white;
+    }
+    .instock {
+        background-color: green;
+        color: white;
+        padding: 10px;
+    }
+</style>

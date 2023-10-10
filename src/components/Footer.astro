@@ -1,0 +1,44 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+---
+<SectionHeader section_title="Find os her"/>
+<div class="footer">
+    <div class="left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.9337054969374!2d12.594371776577075!3d55.707524095478064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252ea2359c0eb%3A0x874928da3adf26c6!2sHamborg%20Pl.%206%2C%202150%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1696960236230!5m2!1sda!2sdk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="right">
+        <p>
+            <i class="fa-solid fa-house"></i> Hamborg Plads 6, 2150 København
+        </p>
+        <p>
+            <i class="fa-solid fa-phone"></i> +45 12 34 56 78
+        </p>
+        <p>
+            <i class="fa-solid fa-envelope"></i> hello@uxcopenhagen.com
+        </p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> | <a href="conduct.html">Rules of Conduct</a>
+        </p>
+    </div>
+</div>
+
+<style>
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: rgb(156, 207, 213);
+    }
+    iframe {
+        width: 100%;
+        height: 400px;
+    }
+    .right {
+        padding-left: 30px;
+        color: black;
+        font-size: 16px;
+        font-family: "Michroma", sans-serif;
+    }
+    .right a {
+        color: black;
+    }
+</style>

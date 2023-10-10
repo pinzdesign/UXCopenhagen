@@ -9,13 +9,13 @@
 <header>
 	<div class="banner">
 		<div class="logo">
-			<img src="../img/logo.png">
+			<a href="index.html"><img src="../img/logo.png"></a>
 		</div>
 		<nav class="navmenu">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#">Tickets</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="profil.html">Profile</a></li>
+				<li><a href="tickets.html">Tickets</a></li>
 				<li><a href="#">Shop</a></li>
 				<li><a href="#">History</a></li>
 			</ul>
@@ -24,6 +24,7 @@
 			<div class="caption_box">
 				<div class="caption">
 					<h2>Degrowth & Consumerism</h2>
+					<h2 class="orange">March 20-21 2024</h2>
 				</div>
 			</div>
 		</div>
@@ -44,29 +45,33 @@
 	width: 245px;
 }
 
-.banner {
-	padding: 30px;
+.orange {
+	color: #f29f23;
 }
 
 .navmenu ul {
 	display: flex;
-	gap: 30px;
+	gap: 10px;
 	list-style: none;
 	justify-content: right;
+	position: fixed;
+	right: 30px;
+	z-index: 2;
 }
 
-a {
+.navmenu a {
 	font-family: "Michroma", sans-serif;
-	letter-spacing: 3px;
-	color: white;
-	border: 2px solid white;
+	letter-spacing: 2px;
+	color: black;
+	background-color: #f29f23;
+	/*border: 2px solid black;*/
 	text-decoration: none;
-	padding: 15px 45px;
+	padding: 10px 25px;
 	transition: all .3s;
 }
 
-a:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+.navmenu a:hover {
+	color: white;
 }
 
 .caption_box {
@@ -88,7 +93,6 @@ a:hover {
 	font-family: "Michroma", sans-serif;
 	letter-spacing: 3px;
 	line-height: 50px;
-	text-shadow: 1px 1px white, -1px -1px #666;
 	position: absolute;
 	top: 30px;
 	left: 30px;
