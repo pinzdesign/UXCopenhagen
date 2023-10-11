@@ -6,10 +6,10 @@ import ContentGrid2 from '../components/ContentGrid2.astro';
 import Sponsors from '../components/Sponsors.astro';
 import Statistics from '../components/Statistics.astro';
 import Speakers from '../components/Speakers.astro';
-import TicketsList from '../components/TicketsList.astro'
+import ShopList from '../components/ShopList.astro'
 import Footer from '../components/Footer.astro';
 
-const data = await fetch("https://mbunnlwvlrpswztiejnm.supabase.co/rest/v1/tickets", {
+const data = await fetch("https://mbunnlwvlrpswztiejnm.supabase.co/rest/v1/shop", {
 	method: "GET",
 	headers: {
 		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1idW5ubHd2bHJwc3d6dGllam5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY1NzgwMTcsImV4cCI6MjAxMjE1NDAxN30.NcKi6QvBBpwv13zB6TnEVaPc9uplsjTnuY2rQp3PfGU"	
@@ -19,14 +19,14 @@ const data = await fetch("https://mbunnlwvlrpswztiejnm.supabase.co/rest/v1/ticke
 console.log(data);
 ---
 
-<Layout title="UX Copenhagen - Buy tickets", meta_description="purchase and browse tickets">
+<Layout title="UX Copenhagen - Shop", meta_description="purchase and browse shop">
 	<Header/>
-	<SectionHeader section_title="Buy ticket for 2024 event"/>
+	<SectionHeader section_title="Online Shop"/>
 	<!--ContentGrid2/-->
 	<section>
 		{
-			data.map((ticket) => {
-				return <TicketsList data={ticket}/>
+			data.map((item) => {
+				return <ShopList data={item}/>
 			})
 		}
 	</section>
@@ -42,11 +42,16 @@ console.log(data);
 		width: calc(70% + 60px);
 		margin: 30px auto;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		align-content: center;
 		gap: 30px;
 	}
-	@media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1200px) {
+        section {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media screen and (max-width: 600px) {
         section {
             grid-template-columns: 1fr;
         }

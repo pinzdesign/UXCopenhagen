@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import Sponsors from "../../components/Sponsors.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch('https://mbunnlwvlrpswztiejnm.supabase.co/rest/v1/tickets',{
+        method: "GET",
+        headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1idW5ubHd2bHJwc3d6dGllam5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY1NzgwMTcsImV4cCI6MjAxMjE1NDAxN30.NcKi6QvBBpwv13zB6TnEVaPc9uplsjTnuY2rQp3PfGU"	
+        }
+}).then((response) => response.json());
+
+  return data.map((ticket) => {
+    return {
+      params: { slug: ticket.slug },
+      props: { post: ticket },
+    };
+  });
+}
+const {post} = Astro.props;
+console.log(post);
+---
+<Layout title={post.title} meta_description="purchase ticket">
+    <Header/>
+    <SectionHeader section_title={post.title}/>
+    <div class="ticket">
+        <div class="left">
+            <img src={"../img/" + post.img} alt="ticket picture"/>
+        </div>
+        <div class="right">
+            <h2>{post.title}</h2>
+            {post.price > 0 && <h3>Price: {post.price} DKK</h3>}
+            {post.instock && <span class="instock">In Stock</span>}
+            <p><Fragment set:html={post.description}/></p>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i> Buy</a>
+        </div>
+    </div>
+    <SectionHeader section_title="Sponsors"/>
+	<Sponsors/>
+    <Footer/>
+</Layout>
+
+<style>
+    .ticket {
+        width: calc(70% + 60px);
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 30px;
+    }
+    .instock {
+        background-color: green;
+        color: white;
+        padding: 10px 25px;
+    }
+    a {
+        background-color: #f29f23;
+        color: black;
+        padding: 10px 25px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all .3s;
+    }
+    a:hover {
+        color: white;
+    }
+</style>

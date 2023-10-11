@@ -8,14 +8,14 @@ const parseDesc = data.description;
 
 <div class="ticket">
     <h4>{data.title}</h4>
-    <img src="../img/heart.png">
+    <img src={"../img/" + data.img}>
     {data.id !== 3 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
     {data.id === 3 &&
     <div class="description_box">
         <Fragment set:html={parseDesc} />
     </div>
     }
-    {data.id !== 3 && <a href={"ticket.html/id=" + data.id}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
+    {data.id !== 3 && <a href={"tickets/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
 </div>
 
 <style>

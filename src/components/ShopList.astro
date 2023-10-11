@@ -1,20 +1,23 @@
 ---
 const {data} = Astro.props;
 
-const parseDesc = data.description;
+//const parseDesc = data.description;
 
 //console.log(data);
 ---
 
-<div class="ticket">
+<div class="shop_item">
     <h4>{data.title}</h4>
     <img src={"../img/" + data.img}>
-    {data.id !== 3 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
     {data.instock && <span class="instock">In Stock</span> }
-    <div class="description_box">
-        <Fragment set:html={parseDesc} />
-    </div>
-    {data.id !== 3 && <a href={"tickets/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
+    <div class="price_box">
+        <div class="price">
+            {data.price > 0 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
+        </div>
+        <div class="buy">
+            <a href={"products/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>
+        </div>
+    </div>    
 </div>
 
 <style>
@@ -22,12 +25,13 @@ const parseDesc = data.description;
         margin: 0;
         font-family: "Michroma", sans-serif;
     }
-    .ticket {
+    .shop_item {
         background-color: white;
         border: 1px solid #999;
         padding: 30px;
+        position: relative;
     }
-    .ticket img {
+    .shop_item img {
         width: 100%;
     }
     a {
@@ -48,5 +52,20 @@ const parseDesc = data.description;
         background-color: green;
         color: white;
         padding: 10px;
+        position: absolute;
+        top:110px;
+        right: 30px;
+    }
+    .price_box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .price {
+        padding-top: 20px;
+    }
+    @media screen and (max-width: 1200px) {
+        .price_box {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
