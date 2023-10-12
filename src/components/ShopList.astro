@@ -15,7 +15,7 @@ const {data} = Astro.props;
             {data.price > 0 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
         </div>
         <div class="buy">
-            <a href={"https://animated-pastelito-852171.netlify.app/products/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>
+            <a href={ "https://animated-pastelito-852171.netlify.app/products/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>
         </div>
     </div>    
 </div>
