@@ -14,7 +14,7 @@ const parseDesc = data.description;
     <div class="description_box">
         <Fragment set:html={parseDesc} />
     </div>
-    {data.id !== 3 && <a href={"tickets/" + data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
+    {data.id !== 3 && <a href={data.slug}><i class="fa-solid fa-cart-shopping"></i> Buy</a>}
 </div>
 
 <style>
