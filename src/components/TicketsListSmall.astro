@@ -8,7 +8,7 @@ const parseDesc = data.description;
 
 <div class="ticket">
     <h4>{data.title}</h4>
-    <img src={"../img/" + data.img}>
+    <img src={"../img/" + data.img} alt="ticket image">
     {data.id !== 3 && <Fragment set:html={"<h4 class='price'>Price: " + data.price + ' DKK</h4>'}/>}
     {data.id === 3 &&
     <div class="description_box">

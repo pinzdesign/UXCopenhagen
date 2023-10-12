@@ -8,7 +8,7 @@ const {data} = Astro.props;
 
 <div class="shop_item">
     <h4>{data.title}</h4>
-    <img src={"../img/" + data.img}>
+    <img src={"../img/" + data.img}  alt="shop ware image">
     {data.instock && <span class="instock">In Stock</span> }
     <div class="price_box">
         <div class="price">
